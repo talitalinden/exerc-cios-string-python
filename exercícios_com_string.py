@@ -5,7 +5,7 @@
     "colab": {
       "provenance": [],
       "collapsed_sections": [],
-      "authorship_tag": "ABX9TyMZuBlzrOnZ0C0jvc7k7ZV6",
+      "authorship_tag": "ABX9TyPG6mSnVEHRU/tMha2yaIXm",
       "include_colab_link": true
     },
     "kernelspec": {
@@ -227,11 +227,77 @@
       "source": [
         "#Data por extenso. Faça um programa que solicite a data de nascimento (dd/mm/aaaa) do usuário e imprima a data com o nome do mês por extenso. \n",
         "\n",
-        "data = int(input(\"Digite a sua data de nascimento: \"))\n",
-        "mes = str"
+        "dia, mes, ano = input(\"Digite a data do seu nascimento: \"). split('/')\n",
+        "meses = ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro']\n",
+        "\n",
+        "print(dia, 'de', meses[int(mes)-1], 'de', ano)"
       ],
       "metadata": {
-        "id": "WAG4bDDMLLWE"
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "WAG4bDDMLLWE",
+        "outputId": "837202b1-d403-4bab-bf7a-52e9b37d7046"
+      },
+      "execution_count": 15,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Digite a data do seu nascimento: 26/06/1985\n",
+            "26 de junho de 1985\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#Conta espaços e vogais. Dado uma string com uma frase informada pelo usuário (incluindo espaços em branco), conte:\n",
+        "\n",
+        "    #quantos espaços em branco existem na frase.\n",
+        "    #quantas vezes aparecem as vogais a, e, i, o, u. \n",
+        "\n",
+        "frase = str(input(\"Digite uma frase: \"))\n",
+        "vogais = 0\n",
+        "esp = 0\n",
+        "for letra in frase:\n",
+        "    if letra == \" \":\n",
+        "        esp += 1\n",
+        "    elif letra in ['a', 'e', 'i', 'o', 'u']:\n",
+        "        vogais += 1\n",
+        "print(\"A frase tem %d vogais e %d espaços.\" % (vogais, esp))\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "Gs43CcEgo4SQ",
+        "outputId": "2f98fa27-b7fc-4569-fb81-0f128c3c5dbf"
+      },
+      "execution_count": 19,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Digite uma frase: Bicho que calor\n",
+            "A frase tem 6 vogais e 2 espaços.\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#Palíndromo. Um palíndromo é uma seqüência de caracteres cuja leitura é idêntica se feita da direita para esquerda ou vice−versa. \n",
+        "#Por exemplo: OSSO e OVO são palíndromos. Em textos mais complexos os espaços e pontuação são ignorados. \n",
+        "#A frase SUBI NO ONIBUS é o exemplo de uma frase palíndroma onde os espaços foram ignorados. \n",
+        "#Faça um programa que leia uma seqüência de caracteres, mostre−a e diga se é um palíndromo ou não. "
+      ],
+      "metadata": {
+        "id": "92upQXhfre4v"
       },
       "execution_count": null,
       "outputs": []
